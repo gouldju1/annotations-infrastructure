@@ -40,5 +40,5 @@ _For installation information, please see the extension's [GitHub page](https://
 
 # Repository Structure
 Each branch will serve a different purpose:
-- `master`: General overview and pertinent information for all users
+- `main`: General overview and pertinent information for all users
 - `setup_and_installation`: Specific information, files, environment settings, etc. for setting up and installing Prodigy on your machine
