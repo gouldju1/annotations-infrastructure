@@ -78,11 +78,13 @@ Open the `Settings` menu, go to `Advanced Settings Editor`, select the settings 
 As mentioned avove, the annotated data are saved to `$PRODIGY_HOME/prodigy.db`, where the table name is defined in the command to start Prodigy (e.g., `my_set` in the first example.)
 
 The database's schema:
+
 ![DB Schema](./resources/images/schema.png)
 
 When you start a new Prodigy session, the `source` value (e.g., `my_set`) will be reflected as a row in `dataset`.
 
 Every annotation is saved as a unique row in `example`, which is linked to the dataset, via the `link` table. For example:
+
 ![DB Example](./resources/images/db_example.png)
 
 ## Example Usage
@@ -90,7 +92,7 @@ You will find a copy of `prodigy.db` as an example, to show what I have done for
 
 ### Tables and Descriptions
 - `my_set`
-    - This is the default example from the Prodigy documentation--using the [sample news headline data]() to annotate for a blank English spaCy model.
+    - This is the default example from the Prodigy documentation--using the [sample news headline data](https://github.com/gouldju1/annotations-infrastructure/blob/NER/resources/news_headlines.jsonl) to annotate for a blank English spaCy model.
     ```
     python -m prodigy ner.manual my_set blank:en ./news_headlines.jsonl --label PERSON,ORG,PRODUCT
     ```
