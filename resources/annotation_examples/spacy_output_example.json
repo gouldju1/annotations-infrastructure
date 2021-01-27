@@ -1,0 +1,146 @@
+{
+    "text": "Pearl Automation, Founded by Apple Veterans, Shuts Down",
+    "meta": {
+        "source": "The New York Times"
+    },
+    "tokens": [
+        {
+            "text": "[CLS]",
+            "id": 0,
+            "start": 0,
+            "end": 0,
+            "tokenizer_id": 101,
+            "disabled": true,
+            "ws": true
+        },
+        {
+            "text": "pearl",
+            "id": 1,
+            "start": 0,
+            "end": 5,
+            "tokenizer_id": 7247,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "automation",
+            "id": 2,
+            "start": 6,
+            "end": 16,
+            "tokenizer_id": 19309,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": ",",
+            "id": 3,
+            "start": 16,
+            "end": 17,
+            "tokenizer_id": 1010,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "founded",
+            "id": 4,
+            "start": 18,
+            "end": 25,
+            "tokenizer_id": 2631,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "by",
+            "id": 5,
+            "start": 26,
+            "end": 28,
+            "tokenizer_id": 2011,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "apple",
+            "id": 6,
+            "start": 29,
+            "end": 34,
+            "tokenizer_id": 6207,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "veterans",
+            "id": 7,
+            "start": 35,
+            "end": 43,
+            "tokenizer_id": 8244,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": ",",
+            "id": 8,
+            "start": 43,
+            "end": 44,
+            "tokenizer_id": 1010,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "shut",
+            "id": 9,
+            "start": 45,
+            "end": 49,
+            "tokenizer_id": 3844,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": "s",
+            "id": 10,
+            "start": 49,
+            "end": 50,
+            "tokenizer_id": 2015,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "down",
+            "id": 11,
+            "start": 51,
+            "end": 55,
+            "tokenizer_id": 2091,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "[SEP]",
+            "id": 12,
+            "start": 0,
+            "end": 0,
+            "tokenizer_id": 102,
+            "disabled": true,
+            "ws": true
+        }
+    ],
+    "_input_hash": 1487477437,
+    "_task_hash": 305312124,
+    "_session_id": null,
+    "_view_id": "ner_manual",
+    "spans": [
+        {
+            "start": 0,
+            "end": 16,
+            "token_start": 1,
+            "token_end": 2,
+            "label": "ORG"
+        },
+        {
+            "start": 29,
+            "end": 43,
+            "token_start": 6,
+            "token_end": 7,
+            "label": "PERSON"
+        }
+    ],
+    "answer": "accept"
+}

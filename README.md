@@ -103,3 +103,287 @@ You will find a copy of `prodigy.db` as an example, to show what I have done for
     - You can use `wget "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt" -O "bert-base-uncased-vocab.txt"` to get the vocabulary file for the BERT tokenizer (the `wget` will have you download it directly from Hugging Face; however, I included it in the repository under `./resources`.)
     - You can use `wget "https://raw.githubusercontent.com/explosion/prodigy-recipes/master/other/transformers_tokenizers.py" -O "transformers_tokenizers.py"` to get the recipe for transformers (the `wget` will have you download it directly from Explosion AI; however, I included it in the repository under `./resources`.)
     - You need to keep `--lowercase` flag for the tokenizer to work; otherwise your tokens will be OOV, and represented by `[UNK]`.
+
+# How do the Output Data Look?
+_Also see `./resources/annotation_examples`_
+SpaCy Example:
+```
+{
+    "text": "Pearl Automation, Founded by Apple Veterans, Shuts Down",
+    "meta": {
+        "source": "The New York Times"
+    },
+    "tokens": [
+        {
+            "text": "[CLS]",
+            "id": 0,
+            "start": 0,
+            "end": 0,
+            "tokenizer_id": 101,
+            "disabled": true,
+            "ws": true
+        },
+        {
+            "text": "pearl",
+            "id": 1,
+            "start": 0,
+            "end": 5,
+            "tokenizer_id": 7247,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "automation",
+            "id": 2,
+            "start": 6,
+            "end": 16,
+            "tokenizer_id": 19309,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": ",",
+            "id": 3,
+            "start": 16,
+            "end": 17,
+            "tokenizer_id": 1010,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "founded",
+            "id": 4,
+            "start": 18,
+            "end": 25,
+            "tokenizer_id": 2631,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "by",
+            "id": 5,
+            "start": 26,
+            "end": 28,
+            "tokenizer_id": 2011,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "apple",
+            "id": 6,
+            "start": 29,
+            "end": 34,
+            "tokenizer_id": 6207,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "veterans",
+            "id": 7,
+            "start": 35,
+            "end": 43,
+            "tokenizer_id": 8244,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": ",",
+            "id": 8,
+            "start": 43,
+            "end": 44,
+            "tokenizer_id": 1010,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "shut",
+            "id": 9,
+            "start": 45,
+            "end": 49,
+            "tokenizer_id": 3844,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": "s",
+            "id": 10,
+            "start": 49,
+            "end": 50,
+            "tokenizer_id": 2015,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "down",
+            "id": 11,
+            "start": 51,
+            "end": 55,
+            "tokenizer_id": 2091,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "[SEP]",
+            "id": 12,
+            "start": 0,
+            "end": 0,
+            "tokenizer_id": 102,
+            "disabled": true,
+            "ws": true
+        }
+    ],
+    "_input_hash": 1487477437,
+    "_task_hash": 305312124,
+    "_session_id": null,
+    "_view_id": "ner_manual",
+    "spans": [
+        {
+            "start": 0,
+            "end": 16,
+            "token_start": 1,
+            "token_end": 2,
+            "label": "ORG"
+        },
+        {
+            "start": 29,
+            "end": 43,
+            "token_start": 6,
+            "token_end": 7,
+            "label": "PERSON"
+        }
+    ],
+    "answer": "accept"
+}
+```
+
+BERT Example:
+```
+{
+    "text": "Tim O'Reilly Explains the Internet of Things",
+    "meta": {
+        "source": "The New York Times"
+    },
+    "tokens": [
+        {
+            "text": "[CLS]",
+            "id": 0,
+            "start": 0,
+            "end": 0,
+            "tokenizer_id": 101,
+            "disabled": true,
+            "ws": true
+        },
+        {
+            "text": "tim",
+            "id": 1,
+            "start": 0,
+            "end": 3,
+            "tokenizer_id": 5199,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "o",
+            "id": 2,
+            "start": 4,
+            "end": 5,
+            "tokenizer_id": 1051,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": "'",
+            "id": 3,
+            "start": 5,
+            "end": 6,
+            "tokenizer_id": 1005,
+            "disabled": false,
+            "ws": false
+        },
+        {
+            "text": "reilly",
+            "id": 4,
+            "start": 6,
+            "end": 12,
+            "tokenizer_id": 13875,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "explains",
+            "id": 5,
+            "start": 13,
+            "end": 21,
+            "tokenizer_id": 7607,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "the",
+            "id": 6,
+            "start": 22,
+            "end": 25,
+            "tokenizer_id": 1996,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "internet",
+            "id": 7,
+            "start": 26,
+            "end": 34,
+            "tokenizer_id": 4274,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "of",
+            "id": 8,
+            "start": 35,
+            "end": 37,
+            "tokenizer_id": 1997,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "things",
+            "id": 9,
+            "start": 38,
+            "end": 44,
+            "tokenizer_id": 2477,
+            "disabled": false,
+            "ws": true
+        },
+        {
+            "text": "[SEP]",
+            "id": 10,
+            "start": 0,
+            "end": 0,
+            "tokenizer_id": 102,
+            "disabled": true,
+            "ws": true
+        }
+    ],
+    "_input_hash": 1960221200,
+    "_task_hash": 1177653066,
+    "_session_id": null,
+    "_view_id": "ner_manual",
+    "spans": [
+        {
+            "start": 0,
+            "end": 12,
+            "token_start": 1,
+            "token_end": 4,
+            "label": "PERSON"
+        },
+        {
+            "start": 26,
+            "end": 44,
+            "token_start": 7,
+            "token_end": 9,
+            "label": "PRODUCT"
+        }
+    ],
+    "answer": "accept"
+}
+```
