@@ -8,13 +8,14 @@ _For additional installation information, please see the JupyterLab extension's 
 This repository will walk you through installing Prodigy on your local machine...
 
 0. Before starting to install Prodigy, it is recommended to ensure you are running Python 3.6+ with Anaconda, and [create a new virtual environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
-    - I have provided an `environment.yml` file to expedite this process. To create a new virtual environment with it:
+    - To create a new virtual environment:
     ```
-    conda env create --name your_env -f environment.yml
+    conda create --name your_env python=3.8 pip
     ```
-    - There is also a `requirements.txt` file, showing all the packages and their versions.
-
-    - Before proceeding with installation, be sure to `conda activate` the environment you just created!
+    - Once you **activate your environment** (`conda activate your_env`), `cd` into the location with `requirements.txt` and install all required packages:
+    ```
+    pip install -r requirements.txt
+    ```
 
 1. Retrive the proper `.whl` file for your system:
     - Prodigy currently supports macOS, Linux, and Windows on Python 3.6.x+
