@@ -61,7 +61,9 @@ python -m spacy download en_core_web_sm
 If you have trained your own spaCy model, you can load them into Prodigy using the path to the model directory. You can also use the [`spacy package` command](https://spacy.io/api/cli#package) to turn it into a Python package, and install it in your current environment. All Prodigy recipes that allow a `spacy_model` argument can either take the name of an installed model package, or the path to a valid model package directory. Keep in mind that a new minor version of spaCy also means that you need to retrain your models. For example, models trained with spaCy v2.1 are not going to be compatible with v2.2.
 
 ## Installing the JupterLab Extension
-At Purdue, we will leverage the JupyterLab extension to carry out our annotations using Prodigy.
+At Purdue, we can leverage the JupyterLab extension to carry out our annotations using Prodigy.
+
+**THIS IS NOT REQUIRED! YOU CAN SKIP THIS STEP, AND RUN PRODIGY IN THE BROWSER!**
 
 To install, run:
 ```
