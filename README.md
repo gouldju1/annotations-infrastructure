@@ -18,13 +18,18 @@ This repository will walk you through installing Prodigy on your local machine..
     pip install -r requirements.txt
     ```
 
-3. Retrive the proper `.whl` file for your system:
+3. Install spaCy's small English model:
+    ```
+    python -m spacy download en_core_web_sm
+    ```
+
+4. Retrive the proper `.whl` file for your system:
     - Prodigy currently supports macOS, Linux, and Windows on Python 3.6.x+
     - You can store this file anywhere on your local machine; it is only needed for the initial installation.
 
 <img src="https://prodi.gy/static/57ba7ed22296e27bae9d5164aea49e27/53bcc/install_download.jpg">
 
-4. Once the wheel installer is downloaded, you can `pip install` it by `cd`-ing to the location and running:
+5. Once the wheel installer is downloaded, you can `pip install` it by `cd`-ing to the location and running:
 ```
 pip install ./prodigy*.whl
 ```
