@@ -21,7 +21,7 @@ This repository will walk you through installing Prodigy on your local machine..
 3. Install spaCy's small English model (_normally done via `python -m spacy download en_core_web_sm`, but due to proxy issues, use the following_):
     - Take the `en_core_web_sm-2.0.0.tar.gz` file in this repository and install via `pip`:
     ```
-    pip install .\en_core_web_sm-2.0.0.tar.gz
+    pip install en_core_web_sm-2.0.0.tar.gz
     ```
 
 4. Retrive the proper `.whl` file for your system:
