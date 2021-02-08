@@ -35,6 +35,8 @@ This repository will walk you through installing Prodigy on your local machine..
 pip install ./prodigy*.whl
 ```
 
+**NOTE: DO NOT CHANGE THE NAME OF THE WHEEL FILE! IT MUST _EXACTLY_ MATCH THE NAME OF THE FILE ON THE PURDUE BOX. IF YOU DOWNLOAD THE FILE > 1 TIME, CHECK THE END OF THE FILENAME TO ENSURE A ` (1)`, FOR EXAMPLE, WAS NOT ADDED! FAILURE TO ADHERE TO THE NAMING WILL LIKELY RESULT IN A FAILED INSTALLATION**
+
 At this point, Prodigy should be installed within your virtual environemnt. To check, run `python -m prodigy stats`, which should provide an output similar to:
 ```
 ============================== ✨  Prodigy Stats ==============================
