@@ -35,7 +35,16 @@ This repository will walk you through installing Prodigy on your local machine..
 pip install ./prodigy*.whl
 ```
 
-**NOTE: DO NOT CHANGE THE NAME OF THE WHEEL FILE! IT MUST _EXACTLY_ MATCH THE NAME OF THE FILE ON THE PURDUE BOX. IF YOU DOWNLOAD THE FILE > 1 TIME, CHECK THE END OF THE FILENAME TO ENSURE A ` (1)`, FOR EXAMPLE, WAS NOT ADDED! FAILURE TO ADHERE TO THE NAMING WILL LIKELY RESULT IN A FAILED INSTALLATION**
+**NOTE: DO NOT CHANGE THE NAME OF THE WHEEL FILE! IT MUST _EXACTLY_ MATCH THE NAME OF THE FILE ON THE PURDUE BOX. IF YOU DOWNLOAD THE FILE > 1 TIME, CHECK THE END OF THE FILENAME TO ENSURE A ` (1)`, FOR EXAMPLE, WAS NOT ADDED! FAILURE TO ADHERE TO THE NAMING WILL LIKELY RESULT IN A FAILED INSTALLATION!**
+
+Example wheel filenames:
+```
+prodigy-1.10.5-cp36.cp37.cp38-cp36m.cp37m.cp38-win_amd64.whl
+prodigy-1.10.5-cp36.cp37.cp38-cp36m.cp37m.cp38-linux_x86_64.whl
+prodigy-1.10.5-cp36.cp37.cp38-cp36m.cp37m.cp38-macosx_10_14_x86_64.whl
+```
+
+Do NOT change this filename and ensure it looks exactly like above.
 
 At this point, Prodigy should be installed within your virtual environemnt. To check, run `python -m prodigy stats`, which should provide an output similar to:
 ```
