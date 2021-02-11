@@ -63,11 +63,6 @@ Total Sessions   0
 
 If it does not, please refer to [Prodigy's documentation](https://prodi.gy/docs/) to troubleshoot.
 
-When this is done, you need to install the spaCy small english model, via:
-```
-python -m spacy download en_core_web_sm
-```
-
 # Installing Dependencies for Full Functionality
 ## Using and installing spaCy models 
 To use Prodigy’s built-in recipes for NER or text classification, you’ll also need to install a spaCy model – for example, the [small English model](https://spacy.io/models/en#en_core_web_sm), en_core_web_sm (around 34 MB). Note that Prodigy currently requires Python 3.6+ and the latest [spaCy v2.2] (https://spacy.io/usage/v2-2).
