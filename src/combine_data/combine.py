@@ -65,7 +65,7 @@ def combine_within_database(db_path, new_dataset_name, datasets_to_combine):
     print(f"Completed! Added {datasets_to_combine} as {new_dataset_name} in {db_path}")
 
 #Combine Datasets across MULTIPLE Databases
-def combine_databases(d):
+def combine_databases(d, fix_error=False):
     """
     d : (dict) Containing the following
         d = {"databases" : 
@@ -129,6 +129,11 @@ def combine_databases(d):
 
             #Add to Examples df
             example_dfs.append(examples)
+    
+    if fix_error:
+        drop_range = list(range(250, 300))
+
+        example_dfs[-1] = example_dfs[-1].drop(drop_range).reset_index(drop=True)
 
     #Combine DataFrames into One
     examples_to_add = pd.concat(example_dfs).reset_index(drop=True)
@@ -136,15 +141,24 @@ def combine_databases(d):
     #Add Examples to Database
     for index, row in examples_to_add.iterrows():
         #INSERT INTO example Table
-        c_save.execute(f"""INSERT INTO example VALUES (NULL, {row['input_hash']}, {row['task_hash']}, '{row['content'].decode("utf-8").replace("'", "''")}')""")
-        conn.commit()
+        try:
+            new_text = row['content'].decode("utf-8").replace("'", "''")
+        except:
+            #new_text = row['content'].replace("'", "''")
+            continue
+        
+        if "FAIL_CODE" in new_text:
+            continue
+        else:
+            c_save.execute(f"""INSERT INTO example VALUES (NULL, {row['input_hash']}, {row['task_hash']}, '{new_text}')""")
+            conn.commit()
 
-        #Get Example ID
-        example_id = pd.read_sql_query(f"SELECT MAX(id) AS id FROM example", conn_save)["id"][0]
+            #Get Example ID
+            example_id = pd.read_sql_query(f"SELECT MAX(id) AS id FROM example", conn_save)["id"][0]
 
-        #INSERT INTO link Table
-        c_save.execute(f"INSERT INTO link VALUES (NULL, {example_id}, {new_dataset_id})")
-        conn_save.commit()
+            #INSERT INTO link Table
+            c_save.execute(f"INSERT INTO link VALUES (NULL, {example_id}, {new_dataset_id})")
+            conn_save.commit()
 
     #Close Database
     conn_save.close()
